@@ -22,36 +22,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const allGalary = document.querySelector(".gallery");
+allGalary.style.display = "flex";
+allGalary.style.gap = "5px";
 
+const imagesMarkup = ({url, alt}) => {
+  return `<li><img src = ${url} alt = '${alt}' width="300" height="200"></li>`;
+};
 
-// у Репети схоже рішення
+const imageGallery = images.map(imagesMarkup).join('');
 
-// const makeTransactionTableRowMarkup = transaction => {  // Markup - цей термін використовують, щоб зазначити що для розмітки строк
-//   const {id, amount, date, business, name1, type, account} = transaction;
-//   return `
-//   <tr>
-//       <td>${id}</td>
-//       <td>${amount}</td>
-//       <td>${date}</td>
-//       <td>${business}</td>
-//       <td>${name1}</td>
-//       <td>${type}</td>
-//       <td>${account}</td>
-//   </tr>
-//    `;
-// };
-
-// // console.log(transactionHistory);
-// // console.log(makeTransactionTableRowMarkup(transactionHistory[2]));
-// const tableEl = document.querySelector('.js-transaction-table');
-// const makeTransactionTableRows = transactionHistory
-// .map(makeTransactionTableRowMarkup)
-// .join('');
-// tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows );
-// console.log(makeTransactionTableRows);
-
-
-
-// моє
-
-const galleryList = document.querySelector('.gallery');
+allGalary.insertAdjacentHTML("afterbegin", imageGallery);
