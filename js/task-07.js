@@ -6,13 +6,12 @@
 // <br />
 // <span id="text">Abracadabra!</span>
 
+
 const inputFontSizeControl = document.querySelector("#font-size-control");
-const textForChange = document.querySelector("#text");
+const textForChang = document.querySelector("#text");
+
+console.dir(inputFontSizeControl.value);
+textForChang.style.fontSize = inputFontSizeControl.value + `px`;
 
 
-inputFontSizeControl.addEventListener("input", FontSizeChange);
-
-function FontSizeChange (size) {
-    textForChange.style.fontSize = size.currentTarget.value + `px`
-
-};
+inputFontSizeControl.addEventListener("input", (size) => textForChang.style.fontSize = size.currentTarget.value + `px`);
