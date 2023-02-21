@@ -17,7 +17,8 @@ console.log(inputLength);
 inputValidEl.addEventListener('blur', onInputBlur);
 
 
-function onInputBlur (event) {
+function onInputBlur(event) {
+    inputValidEl.classList = [];
     if(inputValidEl.value.length == inputLength) {
         inputValidEl.classList.add('valid');
 
@@ -25,4 +26,7 @@ function onInputBlur (event) {
         inputValidEl.classList.add('invalid')
     };
 };
+
+
+
 
