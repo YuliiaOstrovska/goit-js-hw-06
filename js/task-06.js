@@ -19,7 +19,6 @@ inputValidEl.addEventListener('blur', onInputBlur);
 
 function onInputBlur (event) {
     if(inputValidEl.value.length == inputLength) {
-        inputValidEl.classList.remove('validation-input');
         inputValidEl.classList.add('valid');
 
     } else {
